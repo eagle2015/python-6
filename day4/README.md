@@ -24,7 +24,7 @@
 
 <center>login_register 流程图</center >     
                                           
-![image]()
+![image](https://github.com/1032231418/python/blob/master/day4/liuchengtu.png)
 
 <center>程序运行结果</center >
 
