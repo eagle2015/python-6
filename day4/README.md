@@ -20,16 +20,9 @@
 
 <center>login_register 流程图</center >     
                                           
-![image](https://github.com/1032231418/python/blob/master/day3/login_register.png)
+![image]()
 
 <center>程序运行结果</center >
 
-![image](https://github.com/1032231418/python/blob/master/day3/login_or_register.png)
+![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
 
-<center>ip_top10  流程图</center >               
-                                 
-![image](https://github.com/1032231418/python/blob/master/day3/ip_top10_liucheng.png)
-
-<center>程序运行结果</center >  
-
-![image](https://github.com/1032231418/python/blob/master/day3/to_10_run.png)
