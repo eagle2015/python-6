@@ -20,13 +20,18 @@
 	  如果不正确，返回登录界面，如果正确，返回nginx日志html 界面
       
 	
-
+文件说明：
+          
+		  CMDB.py             #主程序
+		  User_messages.txt   #用户名密码存储文件
+		  static              #静态文件存放目录
+		  templates           #html 文件存放目录
 
 <center>login_register 流程图</center >     
                                           
 ![image](https://github.com/1032231418/python/blob/master/day4/liuchengtu.png)
 
-<center>程序运行结果</center >
+<center>程序运行结果: </center >
 
 ![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
 
