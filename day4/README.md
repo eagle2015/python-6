@@ -21,17 +21,28 @@
       
 	
 文件说明：
-          
+    CMDB_V1
 		  CMDB.py             #主程序
 		  User_messages.txt   #用户名密码存储文件
 		  static              #静态文件存放目录
 		  templates           #html 文件存放目录
+		  
+    CMDB_V2
+	      CMDB.py             #主程序
+		  表结构.txt          #表结构
+		  static              #静态文件存放目录
+		  templates           #html 文件存放目录
+		  nginx_log_insert_to_Mysql  #nginx 日志导入数据库脚本
 
 <center>login_register 流程图</center >     
                                           
 ![image](https://github.com/1032231418/python/blob/master/day4/liuchengtu.png)
 
-<center>程序运行结果: </center >
+<center>CMDB_V1程序运行结果: </center >
+
+![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
+
+<center>CMDB_V2程序运行结果: </center >
 
 ![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
 
