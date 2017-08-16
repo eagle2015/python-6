@@ -1,0 +1,13 @@
+##用户信息表结构
+create table  usermessages(
+                id int primary key not null auto_increment , 
+                username varchar(255) unique,
+				password varchar(255));
+
+#nginx 日志表结构
+create table nginx_log(
+               id int(255) primary key not null auto_increment ,
+			   ip  varchar(255),
+			   url varchar(2000),
+			   status varchar(255),
+			   counts bigint(255));
