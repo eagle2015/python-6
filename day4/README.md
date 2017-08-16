@@ -38,15 +38,13 @@
                                           
 ![image](https://github.com/1032231418/python/blob/master/day4/liuchengtu.png)
 
-<center>CMDB_V1程序运行结果: </center >
+<center>#CMDB_V1程序运行结果: </center >
 
 ![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
 
-<center>CMDB_V2程序运行结果: </center >
 
-![image](https://github.com/1032231418/python/blob/master/day4/yanshi.gif)
 
-<center>CMDB_V2程序运行结果: </center >
+<center>#CMDB_V2程序运行结果: </center >
 
 ![image](https://github.com/1032231418/python/blob/master/day4/yanshi2.gif)
 
