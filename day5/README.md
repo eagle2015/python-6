@@ -68,6 +68,6 @@
                *用户信息页面，点击删除按钮,向后端delete() get 传递用户id
                *函数获取到id，执行删除操作
 	 
-<center>3.流程图</center >     
-                                          
-![image](https://github.com/1032231418/python/blob/master/day5/lct.png)
+<center>3.流程图</center > 
+
+                 ![image](https://github.com/1032231418/python/blob/master/day5/lct.png)
