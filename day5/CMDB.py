@@ -36,12 +36,15 @@ def login():
 
 @app.route('/userlist/',methods=['GET', 'POST'])        
 def userlist():
+'''
+查询用户信息,以列表的形式返回到页面,渲染后显示
+'''
     sql = 'select * from usermessages ;'
     if cur.execute(sql):
-        nginx_log =  cur.fetchall()
+        user_list =  cur.fetchall()
         index =  cur.description
         result = []
-        for res in nginx_log:
+        for res in user_list:
             row = {}
             for i in range(len(index)):
                 row[index[i][0]] = res[i]
