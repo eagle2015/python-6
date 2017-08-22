@@ -70,4 +70,4 @@
 	 
 <center>3.流程图</center > 
 
-                 ![image](https://github.com/1032231418/python/blob/master/day5/lct.png)
+![image](https://github.com/1032231418/python/blob/master/day5/lct.png)
