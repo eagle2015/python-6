@@ -85,4 +85,5 @@
 
 5.项目运行演示:
 
+![image](https://github.com/1032231418/python/blob/master/day5/yanshi.swf)
 
