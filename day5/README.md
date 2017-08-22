@@ -77,18 +77,4 @@
 
 项目结构：
 
-
-├── CMDB.py           #主程序
-├── static            #静态文件
-│   ├── css           #css
-│   │
-│   ├── js            #JS
-│    
-└── templates         #HTML 文件
-    ├── assetlist.html#用户信息页面
-    ├── error.html    #错误页面
-    ├── login.html    #登录页面
-    ├── register.html #注册页面
-    ├── success1.html #提交成功页面
-    ├── success.html  
-    └── update.html   #用户密码更新页面
+![image](https://github.com/1032231418/python/blob/master/day5/jiegou.png)
