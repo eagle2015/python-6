@@ -85,5 +85,11 @@
 
 5.项目运行演示:
 
-![image](https://github.com/1032231418/python/blob/master/day5/yanshi.swf)
+注册,登录演示:
+
+![image](https://github.com/1032231418/python/blob/master/day5/login_register.gif)
+
+修改,删除演示：
+
+![image](https://github.com/1032231418/python/blob/master/day5/update_delete.gif)
 
