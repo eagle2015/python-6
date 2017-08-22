@@ -17,10 +17,8 @@ connect_db.autocommit(True)
 cur = connect_db.cursor()
 @app.route('/',methods=['GET', 'POST'])
 def login():
-'''
-获取前端post 提交账号密码，查询数据库进行验证
-如果用户名密码正确,则跳转到用户信息页面,否则返回登录界面，并返回错误信息
-'''
+''' 获取前端post 提交账号密码，查询数据库进行验证
+    如果用户名密码正确,则跳转到用户信息页面,否则返回登录界面，并返回错误信息'''
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -36,9 +34,7 @@ def login():
 
 @app.route('/userlist/',methods=['GET', 'POST'])        
 def userlist():
-'''
-查询用户信息,以列表的形式返回到页面,渲染后显示
-'''
+''' 查询用户信息,以列表的形式返回到页面,渲染后显示'''
     sql = 'select * from usermessages ;'
     if cur.execute(sql):
         user_list =  cur.fetchall()
@@ -54,11 +50,9 @@ def userlist():
 
 @app.route('/register/',methods=['GET', 'POST'])
 def register():
-'''  
-获取前端post 提交账号，密码及重复输入密码，三个参数
-如果两次密码输入正确，则提交到数据库，如果提交不一致，则返回注册页面
-如果用户已经存在，则返回用户已经存在信息
-'''
+''' 获取前端post 提交账号，密码及重复输入密码，三个参数
+    如果两次密码输入正确，则提交到数据库，如果提交不一致，则返回注册页面
+    如果用户已经存在，则返回用户已经存在信息 '''
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -74,10 +68,8 @@ def register():
     return render_template('register.html')
 @app.route('/update/',methods=['GET', 'POST'])
 def  update():
-'''
-修改操作，获取用户信息列表,用户id,然后，进入修改密码页面
-如果用户旧密码，及新密码，如果旧密码匹配，则更新密码，如果不匹配则返回错误信息
-'''
+''' 修改操作，获取用户信息列表,用户id,然后，进入修改密码页面
+    如果用户旧密码，及新密码，如果旧密码匹配，则更新密码，如果不匹配则返回错误信息'''
     if request.method=='GET':
             userid = request.args.get('id')
             return render_template('update.html',userid=userid)
@@ -102,9 +94,7 @@ def  update():
 
 @app.route('/delete/',methods=['GET', 'POST'])
 def  delete():
-'''
-获取用户信息列表,用户id,根据所获取的id,执行sql 删除用户操作,并返回成功页面
-'''
+''' 获取用户信息列表,用户id,根据所获取的id,执行sql 删除用户操作,并返回成功页面'''
     if request.method=='GET':
         userid = int(request.args.get('id'))
         sql = 'delete from usermessages where id=%d;' % (userid)
