@@ -79,6 +79,10 @@
 
 
 
-项目结构：
+4.项目结构：
 
 ![image](https://github.com/1032231418/python/blob/master/day5/jiegou.png)
+
+5.项目运行演示:
+
+
