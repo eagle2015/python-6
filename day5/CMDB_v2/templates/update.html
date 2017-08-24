@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Title</title>
+<style>
+.background_bg {     
+    background-color:#f3ffff;
+    border: 1px solid #000;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height:200px;
+    width:400px;
+    padding:20px;
+ </style>
+        </head>
+        <body>
+            <div align="center" >
+            <span></span><a href="/userlist/">返回用户列表</a>
+            </div>
+           <div class='background_bg'>
+           <h3 align="center"> 用户信息更改</h3>
+        <form action="/update/" method="POST"  autocomplete="off" >
+            <ul>    
+                    <input type="hidden" name="id" value='{{userid}}'>
+                   <li> 旧密码：<input type="password" name="password"></li>
+                   <li> 新密码：<input type="password" name="npassword"></li>
+                     <li><input class="dow"  type="submit"></li>
+            </ul>
+          </form>
+          </div>
+         <h1> {{error}}</h1>
+      </body>
+     </html>
