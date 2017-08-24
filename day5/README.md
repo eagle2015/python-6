@@ -81,7 +81,13 @@
 
 4.项目结构：
 
+   CMDB_v1
+   
 ![image](https://github.com/1032231418/python/blob/master/day5/jiegou.png)
+
+   CMDB_v2
+   
+![image](https://github.com/1032231418/python/blob/master/day5/v2.png)
 
 5.项目运行演示:
 
