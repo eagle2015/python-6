@@ -76,10 +76,11 @@
 	 
 <center>3.流程图</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day5/liucheng.png)
+![image](https://github.com/1032231418/python/blob/master/day6/liucheng.png)
 
 <center>4.目录结构</center > 
-![image](https://github.com/1032231418/python/blob/master/day5/mulu.png)
+
+![image](https://github.com/1032231418/python/blob/master/day6/mulu.png)
 
 
 
