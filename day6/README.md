@@ -40,16 +40,16 @@
              *函数名称register()
              *判断用户输入用户名密码是否为空，如果为空返回错误信息
              *获取用户信息check_user()函数,判断该用户是否存在,如果用户存在，则返回，用户已存在信息
-			 *调用insert_sql()注册该用户信息至数据库
+	         *调用insert_sql()注册该用户信息至数据库
 	         
       2).登录:  
 	  
 	         *函数名称login()
 	         *获取用户POST提交,数据
-			 *判断用户输入用户名密码是否为空，如果为空返回错误信息
+	         *判断用户输入用户名密码是否为空，如果为空返回错误信息
 	         *调用user_authentication()函数，如果,用户名密码匹配,则返回用户信息列表,
 	         *否则,返回错误信息,用户名密码不匹配.
-			 *用户角色判断调用check_role()，如果是管理员可查看所有用户信息，普通用户只能查看自己的信息
+	         *用户角色判断调用check_role()，如果是管理员可查看所有用户信息，普通用户只能查看自己的信息
 	      
 	 
       3).用户信息:
@@ -78,19 +78,8 @@
 
 ![image](https://github.com/1032231418/python/blob/master/day5/liucheng.png)
 
-
-├── app.py            #主程序
-├── config.py         #数据库配置文件
-├── static            #静态文件
-├── user_messages.sql #SQL文件
-├── templates         #HTML 页面
-│   ├── index.html    #主页
-│   ├── login.html    #登录页面
-│   ├── register.html #注册页面
-│   ├── update.html   #更新页面
-│   └── userlist.html #用户信息列表页面
-└── utils.py          #DButils
-
+<center>4.目录结构</center > 
+![image](https://github.com/1032231418/python/blob/master/day5/mulu.png)
 
 
 
