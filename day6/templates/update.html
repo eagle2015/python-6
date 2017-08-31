@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css" rel="stylesheet">
+        .wrap{margin:0 auto;width:500px;} 
+        input.text{text-align:center;padding:5px 23px;width:231px;}  
+    </style>
+</head>
+    <body>
+        <div class="wrap">
+          <h1>&nbsp&nbsp&nbsp&nbsp&nbsp用户信息修改</h1>    
+            <form    id='update' action="/update/" method="post">
+               {% block content %}
+                   {% for item in userlist%}
+                <input type="hidden" name="id" value='{{userid}}'>
+                <p>用户名: <input type="text" name="username" value='{{item.username}}' disabled='disabled' /></p>
+                <p>新密码: <input type="text" name="password"  /></p>
+                <input  class="text"   type="submit" value="修改" /> <br>
+                <br>
+                    {% endfor %}
+                <a>{{msg}} </a>
+                {% endblock %}
+            </form>
+        </div>
+    </body>
+</html>

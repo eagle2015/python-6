@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css" rel="stylesheet">
+        .wrap{margin:0 auto;width:500px;} 
+        input.text{text-align:center;padding:5px 23px;width:231px;}  
+    </style>
+</head>
+    <body>
+        <div class="wrap">
+          <h1>&nbsp&nbsp&nbsp&nbsp&nbsp欢迎登录</h1>    
+            <form    id='register' action="/login/" method="post">
+                <p>用户名: <input type="text" name="username" /></p>
+                <p>密&nbsp&nbsp&nbsp码: <input type="password" name="password" /></p>
+                角色: 
+                 <input type="radio" checked="checked" name="role" value='1'/>超级管理员
+                 <input type="radio"   name="role" value='0' />普通用户 <br>
+                <input  class="text"   type="submit" value="登录" /> <br>
+                <br>
+                <a>{{error}} </a>
+            </form>
+        </div>
+    </body>
+</html>
