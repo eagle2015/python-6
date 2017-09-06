@@ -31,6 +31,23 @@ def login():
 
     return render_template('login.html')
 
+# 仪表板：  darshboard
+@app.route('/darshboard/',methods=['GET', 'POST'])
+def  darshboard():
+    if 'username' not in  session:
+        return redirect('/login/')
+    else:
+        return render_template('index.html',user=session['username'],role=session['role'])
+
+# 仪表板：  darshboard 子页面
+@app.route('/darshboard/<template>')
+def templates(template):
+    if 'username' not in  session:
+	    return redirect('/login/')
+
+    return render_template(template)
+
+	
 # 个人中心
 @app.route('/center/',methods=['GET', 'POST'])
 def center():
@@ -112,25 +129,10 @@ def  update():
 
     return render_template('user-change.html')
 
-# 仪表板：  darshboard
-@app.route('/darshboard/',methods=['GET', 'POST'])
-def  darshboard():
-    if 'username' not in  session:
-        return redirect('/login/')
-    else:
-        return render_template('index.html',user=session['username'],role=session['role'])
-
-# 仪表板：  darshboard 子页面
-@app.route('/darshboard/<template>')
-def templates(template):
-    if 'username' not in  session:
-	    return redirect('/login/')
-
-    return render_template(template)
 
 
 
-# 服务器管理
+# 服务器管理列表
 
 @app.route('/hosts/',methods=['GET', 'POST'])
 def hosts():
