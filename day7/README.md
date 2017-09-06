@@ -62,7 +62,7 @@
 	 
 <center>3.流程图</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day6/liucheng.png)
+![image](https://github.com/1032231418/python/blob/master/day7/liucheng.png)
 
 <center>4.目录结构</center > 
 
