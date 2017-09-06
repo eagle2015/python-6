@@ -31,7 +31,7 @@ def login():
 
     return render_template('login.html')
 
-# 用户管理子模块:  个人中心
+# 个人中心
 @app.route('/center/',methods=['GET', 'POST'])
 def center():
     if 'username' not in  session:
@@ -45,7 +45,7 @@ def center():
         
     return render_template('Personal-Center.html')
 
-# 用户管理子模块: 用户列表
+#  用户列表
 @app.route('/userlist/',methods=['GET', 'POST'])
 def userlist():
     if 'username' not in  session:
@@ -59,7 +59,7 @@ def userlist():
         return  u"抱歉 你是普通用户没有该选项卡的权限!!!" 
 
 
-# 用户管理功能模块: 添加用户
+# 添加用户
 @app.route('/register/',methods=['GET', 'POST'])
 def register():
     if request.method=='POST':
@@ -75,7 +75,7 @@ def register():
 
     return       render_template('user-add.html')
 
-# 用户管理功能模块:  删除用户
+#  删除用户
 @app.route('/delete/',methods=['GET', 'POST'])
 def delete():
     if 'username' not in  session:
@@ -87,7 +87,7 @@ def delete():
              return redirect("/userlist/")
     return redirect("/darshboard/")
 
-# 用户管理功能模块:  用户信息修改
+#  用户信息修改
 @app.route('/update/',methods=['GET', 'POST'])
 def  update():
     if 'username' not in  session:
@@ -112,7 +112,7 @@ def  update():
 
     return render_template('user-change.html')
 
-#仪表板：  darshboard
+# 仪表板：  darshboard
 @app.route('/darshboard/',methods=['GET', 'POST'])
 def  darshboard():
     if 'username' not in  session:
@@ -120,7 +120,7 @@ def  darshboard():
     else:
         return render_template('index.html',user=session['username'],role=session['role'])
 
-#仪表板：  darshboard 子页面
+# 仪表板：  darshboard 子页面
 @app.route('/darshboard/<template>')
 def templates(template):
     if 'username' not in  session:
@@ -130,7 +130,7 @@ def templates(template):
 
 
 
-#资产管理子模块： 服务器管理
+# 服务器管理
 
 @app.route('/hosts/',methods=['GET', 'POST'])
 def hosts():
@@ -143,7 +143,7 @@ def hosts():
         return    render_template('hosts.html',msg=result['msg'])
     return render_template('hosts.html')
 
-#资产管理功能模块： 添加服务器
+#  添加服务器
 @app.route('/addhost/',methods=['GET', 'POST'])
 def addhost():
     if 'username' not in  session:
@@ -160,7 +160,7 @@ def addhost():
             return '用户添加失败'
     return render_template('add-host.html')
 
-#资产管理功能模块： 修改服务器资料
+# 修改服务器资料
 @app.route('/updatehost/',methods=['GET', 'POST'])
 def  updatehost():
     if 'username' not in  session:
@@ -183,7 +183,7 @@ def  updatehost():
             return  '更新失败'
     return render_template('update-host.html')
 
-#资产管理功能模块： 删除服务器
+#  删除服务器
 @app.route('/deletehost/',methods=['GET', 'POST'])
 def deletehost():
     if 'username' not in  session:
