@@ -64,7 +64,11 @@
 
 ![image](https://github.com/1032231418/python/blob/master/day7/liucheng.png)
 
-<center>4.目录结构</center > 
+<center>4.演示</center > 
+
+![image](https://github.com/1032231418/python/blob/master/day7/zy.gif)
+
+<center>5.目录结构</center > 
 
 ![image](https://github.com/1032231418/python/blob/master/day7/mulu.png)
 
