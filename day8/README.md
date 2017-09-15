@@ -79,12 +79,12 @@
 
              *.机房管理
 			     
-				 函数文件：idc.py
+			     函数文件：idc.py
 				      
-				      idc()       显示已添加 idc列表
-				      idcadd()    添加机房
+			          idc()       显示已添加 idc列表
+			          idcadd()    添加机房
 				      idcupdate() 修改机房信息
-				      idcdelete() 删除机房
+			          idcdelete() 删除机房
 		
 	         *.机柜管理
                   
