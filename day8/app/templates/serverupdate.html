@@ -1,0 +1,347 @@
+{% extends "base.html" %}
+<!-- 登录用户角色 -->
+    {% block  role%}
+        {% if msg.role== 0 %}
+           超级管理员
+        {% else %} 
+            普通用户
+        {% endif %}
+    {% endblock%}
+
+<!-- 登录用户名 -->
+    {% block  username%}
+        {{msg.username}}
+    {% endblock%}
+
+<!--导航 -->
+    {% block  navigation%}
+       <a href="/server">服务器管理 </a>  
+{% endblock%}
+
+{% block content%}
+
+<div  class="wrapper wrapper-content animated fadeInRight">
+    <form id="serverForm" class="form-horizontal nice-validator n-yellow" novalidate="novalidate">
+    <div class="row">
+        <div class="col-sm-10">
+            <div class="ibox float-e-margins">
+                <div id="ibox-content" class="ibox-title">
+                    <h5> 修改服务器信息 </h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-wrench"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="ibox-content">
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div id="tab-1" class="ibox float-e-margins tab-pane active">
+                                    
+                                    
+       <form id="assetForm" method="post" class="form-horizontal">
+
+                <input id='id' type='hidden' name='id' value= {{server_list.id}} readonly='true'>                            
+
+<div class="form-group">
+    
+            
+            <label class="control-label col-sm-2 col-lg-2 " for="id_hostname">主机名 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_hostname" maxlength="128" name="hostname" type="text" value="{{server_list.hostname}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_ip">主机IP * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_ip" maxlength="32" name="ip" type="text" value="{{server_list.ip}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_mac">MAC地址 *</label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_mac" maxlength="20" name="mac" type="text" value="{{server_list.mac}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group" id="admin_account" >
+                                            <label class="col-sm-2 control-label">管理账号 * </label>
+                                            <div class="col-sm-3">
+                                                <input type="text" value="{{server_list.username}}" name="username" class="form-control">
+                                            </div>
+
+                                            <label class="col-sm-1 control-label"> </label>
+                                            <div class="col-sm-4">
+                                                <input type="password" value="{{server_list.password}}" name="password" placeholder="管理密码" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" id="id_port">
+                                            <div class="hr-line-dashed"></div>
+                                            <label class="col-sm-2 control-label"> 端口 <span class="red-fonts">*</span> </label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" placeholder="Port" value="{{server_list.port}}" name="port" class="form-control">
+                                                </div>
+                                        </div>
+
+
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_idc">机房 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <select class=" form-control" id="id_idc" name="idc">
+               {% for item in idc%}
+                 <option value="{{item.id}}" selected="selected">{{item.name}}</option>
+                {% endfor %}
+           </select>
+            
+        </div>
+    
+</div>
+
+
+                                       <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_brand">硬件厂商型号 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_brand" maxlength="64" name="brand" type="text" value="{{server_list.brand}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_cpu">CPU *</label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_cpu" maxlength="64" name="cpu" type="text" value="{{server_list.cpu}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_memory">内存 *</label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_memory" maxlength="128" name="memory" type="text" value="{{server_list.memory}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_disk">硬盘 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_disk" maxlength="1024" name="disk" type="text" value="{{server_list.disk}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_system_type">系统类型 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_system_type" maxlength="32" name="system_type" type="text" value="{{server_list.system_type}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+                                        
+
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_number">资产编号 * </label>
+        
+
+        <div class=" col-sm-8 col-lg-8 ">
+            <input class=" form-control" id="id_number" maxlength="32" name="number" type="text" value="{{server_list.number}}" />
+
+            
+
+            
+        </div>
+    
+</div>
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        
+
+<div class="form-group">
+    
+        
+            <label class="control-label col-sm-2 col-lg-2 " for="id_cabinet">机柜号 * </label>
+        <div class=" col-sm-8 col-lg-8 ">
+                    <select class=" form-control" id="id_cabinet" name="cabinet">
+                    {% for item in cabinet%}
+                                    <option value="{{item.id}}" selected="selected">{{item.name}}</option>
+                     {% endfor %}
+                     </select>     
+         
+            </div>  
+
+    
+</div>
+
+
+
+
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <div class="col-sm-4 col-sm-offset-2">
+                                                <button class="btn btn-white" type="reset"> 重置 </button>
+                                                <button id="submit_button"  class="btn btn-primary" type="submit"> 提交 </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+<script>
+$("#submit_button").click(function(){
+    $.post("/serverupdate",$("#serverForm").serialize(),function(data){
+        console.log(data)
+        data=JSON.parse(data);
+        if(data["code"] == 0){
+        swal({
+            title:'Congratulation',
+            text:data['result'],
+            type:'success',
+            confirmButtonText:'确定'
+            },function(){
+            location.href='/server'
+            })
+        }else{
+        swal('Error',data['msg'],'error')
+        }
+    })
+    return false
+})
+
+$('#cancel_button').click(function(){
+    location.href='/server'
+})
+
+
+</script>
+
+ 
+{% endblock%}
