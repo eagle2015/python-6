@@ -128,15 +128,13 @@
 	 
 <center>3.流程图</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day7/liucheng.png)
+![image](https://github.com/1032231418/python/blob/master/day8/naotu.png)
 
-<center>4.演示</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day7/zy.gif)
 
-<center>5.目录结构</center > 
+<center>4.目录结构</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day7/mulu.png)
+![image](https://github.com/1032231418/python/blob/master/day8/jiegou.PNG)
 
 
 
