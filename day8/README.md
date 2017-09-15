@@ -48,7 +48,80 @@
 
 	  
 2.项目功能分析:
-            
+
+       1).用户管理
+	   
+	       *.用户登录/退出 
+		   
+		       函数文件: login.py 
+			   
+			          login() 获取前端输入账号密码，进行判断是否正确,用户是否锁定
+			          loginout() 用户退出
+                      
+	       *.个人中心
+		   
+		       函数文件:  user.py
+			   
+			          center() 用户个人中心，显示已登录用户个人信息
+			          chpwdoneself() 修改个人密码
+			          chmessageoneself() 修改个人资料
+			   
+		   *. 用户列表
+		       
+			    函数文件： userlist.py
+				
+				      userlist() 用户列表，显示已添加用户列表
+				      update()   更新用户信息
+				      add()      添加新用户
+				      delete()   删除用户
+			
+	   2).资产管理
+
+             *.机房管理
+			     
+				函数文件：idc.py
+				      
+				      idc()       显示已添加 idc列表
+				      idcadd()    添加机房
+				      idcupdate() 修改机房信息
+				      idcdelete() 删除机房
+		
+	         *.机柜管理
+                  
+                函数文件： cabinet.py
+                       
+                      cabinet() 机柜列表，显示已添加机柜信息
+                      cabinetadd() 添加新机柜
+                      cabinetupdate() 机柜信息修改
+                      cabinetdelete() 删除机柜
+				 
+			*.服务器管理
+         	    
+				 server.py
+				     server()       显示已添加机服务器列表
+				     serveradd()    添加新服务器
+				     serverupdate() 更新服务器信息
+				     serverdelete() 删除服务器
+		
+	  3).工单系统
+	          
+			 函数文件：  job.py
+            	  
+            *.工单申请
+			    
+				     jobadd() 添加新工单
+				
+            *.申请列表
+				
+                     joblist()    工单列表
+				     jobupdate()  更新工单信息
+				     jobdetail()  查看工单详情
+				     
+            *.历史工单
+			    
+				     jobhistory() 历史工单列表
+				
+ 				
 	
 
 	 
