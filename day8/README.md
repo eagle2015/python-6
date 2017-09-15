@@ -53,14 +53,14 @@
 	   
 	       *.用户登录/退出 
 		   
-		       函数文件: login.py 
+		        函数文件: login.py 
 			   
 			          login() 获取前端输入账号密码，进行判断是否正确,用户是否锁定
 			          loginout() 用户退出
                       
 	       *.个人中心
 		   
-		       函数文件:  user.py
+		        函数文件:  user.py
 			   
 			          center() 用户个人中心，显示已登录用户个人信息
 			          chpwdoneself() 修改个人密码
@@ -68,7 +68,7 @@
 			   
 		   *. 用户列表
 		       
-			    函数文件： userlist.py
+			     函数文件： userlist.py
 				
 			          userlist() 用户列表，显示已添加用户列表
 			          update()   更新用户信息
@@ -79,7 +79,7 @@
 
              *.机房管理
 			     
-				函数文件：idc.py
+				 函数文件：idc.py
 				      
 			          idc()       显示已添加 idc列表
 				      idcadd()    添加机房
@@ -88,7 +88,7 @@
 		
 	         *.机柜管理
                   
-                函数文件： cabinet.py
+                 函数文件： cabinet.py
                        
  			          cabinet() 机柜列表，显示已添加机柜信息
 			          cabinetadd() 添加新机柜
@@ -98,6 +98,7 @@
 	         *.服务器管理
          	    
 				 函数文件: server.py
+				 
  			          server()       显示已添加机服务器列表
  			          serveradd()    添加新服务器
  			          serverupdate() 更新服务器信息
@@ -105,7 +106,7 @@
 		
 	  3).工单系统
 	          
-			 函数文件：  job.py
+			     函数文件：  job.py
             	  
             *.工单申请
 			    
