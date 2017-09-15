@@ -55,15 +55,15 @@
 		   
 		        函数文件: login.py 
 			   
-			          login() 获取前端输入账号密码，进行判断是否正确,用户是否锁定
+			          login()    获取前端输入账号密码，进行判断是否正确,用户是否锁定
 			          loginout() 用户退出
                       
 	       *.个人中心
 		   
 		        函数文件:  user.py
 			   
-			          center() 用户个人中心，显示已登录用户个人信息
-			          chpwdoneself() 修改个人密码
+			          center()           用户个人中心，显示已登录用户个人信息
+			          chpwdoneself()     修改个人密码
 			          chmessageoneself() 修改个人资料
 			   
 		   *. 用户列表
@@ -81,7 +81,7 @@
 			     
 				 函数文件：idc.py
 				      
-			          idc()       显示已添加 idc列表
+				      idc()       显示已添加 idc列表
 				      idcadd()    添加机房
 				      idcupdate() 修改机房信息
 				      idcdelete() 删除机房
@@ -90,8 +90,8 @@
                   
                  函数文件： cabinet.py
                        
- 			          cabinet() 机柜列表，显示已添加机柜信息
-			          cabinetadd() 添加新机柜
+ 			          cabinet()       机柜列表，显示已添加机柜信息
+			          cabinetadd()    添加新机柜
 			          cabinetupdate() 机柜信息修改
 			          cabinetdelete() 删除机柜
 				 
