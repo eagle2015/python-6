@@ -95,7 +95,7 @@
 			          cabinetupdate() 机柜信息修改
 			          cabinetdelete() 删除机柜
 				 
-			*.服务器管理
+	         *.服务器管理
          	    
 				 函数文件: server.py
  			          server()       显示已添加机服务器列表
