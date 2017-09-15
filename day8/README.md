@@ -130,7 +130,9 @@
 
 ![image](https://github.com/1032231418/python/blob/master/day8/naotu.png)
 
-<center>4.流程图</center > 
+
+<center>4.演示 </center > 
+
 
 ![image](https://github.com/1032231418/python/blob/master/day8/yanshi.gif)
 
