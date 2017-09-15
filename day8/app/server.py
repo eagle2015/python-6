@@ -71,7 +71,7 @@ def serverdelete():
     msg = sessionmsg()
     if request.method=='POST':
        server  = {k:v[0] for k,v in dict(request.form).items()}
-       print server
+ 
        if _delete('server',server):
            result ={'code':0, 'msg':"delete   success"}
            return  json.dumps(result)

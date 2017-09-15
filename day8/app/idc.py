@@ -14,7 +14,7 @@ fields = ['id','name','name_cn','address','adminer','phone']
 def idc():
     msg = sessionmsg()
     result = list('idc',fields)
-    print  result 
+ 
     return render_template('idc.html',msg=msg,idc=result['msg'])
 
 # 添加机房
@@ -25,7 +25,7 @@ def idcadd():
         idc = {k:v[0] for k,v in dict(request.form).items()}
         field = ['name','name_cn','address','adminer','phone']
         result = insert_sql('idc',field,idc)
-        print result
+ 
         if  result['code'] == 0:
             result ={'code':0, 'msg':"IDC user success"}
             return  json.dumps(result)
@@ -40,7 +40,7 @@ def idcupdate():
         id = request.args.get('id')
         data={'id':id}
         result = getone('idc',data,fields)
-        print  result
+ 
         return render_template('idcupdate.html',msg=msg,idc=result['msg'])
     if request.method=='POST':
         idc = {k:v[0] for k,v in dict(request.form).items()}
