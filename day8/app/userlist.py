@@ -25,13 +25,13 @@ def update():
         userid = request.args.get('id')
         data={'id':userid}
         result = getone('user',data,field)
- 
+        print result
         return json.dumps(result['msg'])
 
     else:
         field  = ["username","name_cn","mobile","email","role","status"]
         user = {k:v[0] for k,v in dict(request.form).items()}
- 
+        print user
         result = _update('user',field,user)
         return json.dumps(result)
 
@@ -59,7 +59,7 @@ def delete():
     if request.method=='GET':
         userid = request.args.get('id')
         data  =  {'id':userid}
- 
+        print  data
         if _delete('user',data):
             result ={'code':0, 'msg':"delete user success"}
         return  json.dumps(result)
