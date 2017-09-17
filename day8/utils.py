@@ -3,6 +3,7 @@
 __author__ = 'Eagle'
 import MySQLdb as mysql
 import config
+import loginfo
 
 connect_db = mysql.connect(
                            user   =  config.db_user,
@@ -18,6 +19,7 @@ cur = connect_db.cursor()
 def insert_sql(table_name,field,data):
     sql = "INSERT INTO %s (%s) VALUES (%s);" % (table_name, ','.join(field), ','.join(['"%s"' % data[x] for x in field]))
     print sql
+    loginfo.WriteLog("SQL").info("Insert:%s" % sql)
     res = cur.execute(sql)
     connect_db.commit()
     if  res:
@@ -31,6 +33,7 @@ def list(table_name,field):
     sql = "select  *  from %s ;" % table_name
     cur.execute(sql)
     res = cur.fetchall()
+    loginfo.WriteLog("SQL").info("Select:%s" % sql)
     if res:
         user = [dict((k,row[i]) for i,k in enumerate(field))for row in res]
         result = {'code':0,'msg':user}
@@ -47,6 +50,7 @@ def getone(table,data,field):
     print sql
     cur.execute(sql)
     res = cur.fetchone()
+    loginfo.WriteLog("SQL").info("Getone:%s" % sql)
     if res:
         user = {k:res[i] for i,k in enumerate(field)}
         result  = {'code':0,'msg':user}
@@ -54,30 +58,18 @@ def getone(table,data,field):
         result ={'code':1, 'msg':"data is null"}
     return result 
 
-# 个人中心数据获取
-def _center(table,data,field):
-    sql = 'select %s from %s where username="%s";' % (','.join(field),table,data['username'])
-    print sql
-    cur.execute(sql)
-    res = cur.fetchone()
-    if res:
-        user = {k:res[i] for i,k in enumerate(field)}
-        result  = {'code':0,'msg':user}
-    else:
-       result ={'code':1, 'msg':"data is null"}
-    return result
-
 # 数据更新
 def _update(table,field,data): 
     conditions = ["%s='%s'" % (k,data[k]) for k in data]
     sql = "update %s set %s where id=%s ;" %(table,','.join(conditions),data['id'])
     print sql 
     res = cur.execute(sql)
+    loginfo.WriteLog("SQL").info("Update:%s" % sql)
     if res :
         connect_db.commit()
         result = {'code':0,'msg':'update ok'}
     else:
-        result = {'code':1,'errmsg':'update fail'}
+        result = {'code':1,'errmsg':'Update fail'}
     return result 
 
 
@@ -88,6 +80,7 @@ def _delete(table_name,data):
         sql = 'DELETE FROM %s where id="%s" ;' % (table_name,data['id'])
         if  cur.execute(sql):
             connect_db.commit()
+            loginfo.WriteLog("SQL").info("Delete:%s" % sql)
             tag=True
     except Exception, e:
         print 'Error %s' % (sql)
@@ -105,13 +98,14 @@ def check(table,field,where):
         if  cur.execute(sql):
             res = cur.fetchone()
             print res
+            loginfo.WriteLog("SQL").info("Check:%s" % sql)
             user =  {k:res[i] for i,k in enumerate(field)}
             print user
             result  = {'code':0,'msg':user}
         else:
             result ={'code':1, 'msg':"data is null"}
     except Exception, e:
-        print 'Error %s' % (sql)
+        result ={'code':1, 'msg':"SQL Error "}
 
     return  result
 

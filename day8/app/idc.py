@@ -12,20 +12,24 @@ fields = ['id','name','name_cn','address','adminer','phone']
 # 机房管理
 @app.route('/idc',methods=['GET', 'POST'])
 def idc():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     result = list('idc',fields)
-    print  result 
+ 
     return render_template('idc.html',msg=msg,idc=result['msg'])
 
 # 添加机房
 @app.route('/idcadd',methods=['GET', 'POST'])
 def idcadd():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='POST':
         idc = {k:v[0] for k,v in dict(request.form).items()}
         field = ['name','name_cn','address','adminer','phone']
         result = insert_sql('idc',field,idc)
-        print result
+ 
         if  result['code'] == 0:
             result ={'code':0, 'msg':"IDC user success"}
             return  json.dumps(result)
@@ -35,12 +39,14 @@ def idcadd():
 # 修改机房信息
 @app.route('/idcupdate',methods=['GET', 'POST'])
 def idcupdate():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         id = request.args.get('id')
         data={'id':id}
         result = getone('idc',data,fields)
-        print  result
+ 
         return render_template('idcupdate.html',msg=msg,idc=result['msg'])
     if request.method=='POST':
         idc = {k:v[0] for k,v in dict(request.form).items()}
@@ -53,6 +59,8 @@ def idcupdate():
 # 删除机房信息
 @app.route('/idcdelete',methods=['GET', 'POST'])
 def idcdelete():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='POST':
         idc = {k:v[0] for k,v in dict(request.form).items()}

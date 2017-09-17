@@ -17,6 +17,8 @@ server_fields = ['id','hostname', 'ip', 'mac', 'username', 'password', 'port', '
 # 主机列表
 @app.route('/server',methods=['GET', 'POST'])
 def server():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     idc   =  list('idc',idc_fields)
     cabinet   = list('cabinet',cabinet_fields)
@@ -36,6 +38,8 @@ def server():
 # 添加主机
 @app.route('/serveradd',methods=['GET', 'POST'])
 def serveradd():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         idc   =  list('idc',idc_fields)
@@ -51,6 +55,8 @@ def serveradd():
 # 更新主机信息
 @app.route('/serverupdate',methods=['GET', 'POST'])
 def serverupdate():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         id = request.args.get('id')
@@ -68,10 +74,12 @@ def serverupdate():
 # 删除主机
 @app.route('/serverdelete',methods=['GET', 'POST'])
 def serverdelete():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='POST':
        server  = {k:v[0] for k,v in dict(request.form).items()}
-       print server
+ 
        if _delete('server',server):
            result ={'code':0, 'msg':"delete   success"}
            return  json.dumps(result)

@@ -23,6 +23,8 @@ class DatetimeEncoder(json.JSONEncoder):
 # 添加工单
 @app.route('/jobadd/',methods=['GET', 'POST'])
 def jobadd():
+        if 'username' not in  session:
+             return redirect('/login/')
         msg = sessionmsg()
         if request.method=='GET':
             return render_template('jobadd.html',msg=msg)
@@ -38,6 +40,8 @@ def jobadd():
 # 工单列表
 @app.route('/joblist/',methods=['GET', 'POST'])
 def joblist():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         jobs = []
@@ -51,6 +55,8 @@ def joblist():
 # 更新工单信息        
 @app.route('/jobupdate/',methods=['GET', 'POST'])
 def jobupdate():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         field = ['id','handle_name','status']
@@ -73,6 +79,8 @@ def jobupdate():
 # 查看工详情
 @app.route('/jobdetail/',methods=['GET', 'POST'])
 def  jobdetail():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         job  = {k:v[0] for k,v in dict(request.args).items()}
@@ -83,6 +91,8 @@ def  jobdetail():
 # 历史工单
 @app.route('/jobhistory/',methods=['GET', 'POST'])
 def jobhistory():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         job  = list('job',field)

@@ -13,6 +13,8 @@ idc_fields = ['id','name']
 # 机柜列表
 @app.route('/cabinet',methods=['GET', 'POST'])
 def cabinet():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     idc   =  list('idc',idc_fields)
     cabinet   = list('cabinet',field)
@@ -27,6 +29,8 @@ def cabinet():
 # 添加机柜
 @app.route('/cabinetadd',methods=['GET', 'POST'])
 def cabinetadd():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         fields = ['id','name']
@@ -42,6 +46,8 @@ def cabinetadd():
 # 更新机柜信息
 @app.route('/cabinetupdate',methods=['GET', 'POST'])
 def cabinetupdate():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='GET':
         id = request.args.get('id')
@@ -58,6 +64,8 @@ def cabinetupdate():
 # 删除机柜
 @app.route('/cabinetdelete',methods=['GET', 'POST'])
 def cabinetdelete():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='POST':
        cabinet  = {k:v[0] for k,v in dict(request.form).items()}

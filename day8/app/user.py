@@ -2,7 +2,7 @@
 # -*-coding:utf-8 -*-
 
 from flask import request,render_template, redirect,session
-from utils import  getone,check,_update,_delete,insert_sql,_center
+from utils import  getone,check,_update,_delete,insert_sql
 from . import app
 from sessions import sessionmsg
 import json
@@ -10,16 +10,20 @@ import json
 # 用户个人中心
 @app.route('/center/')
 def  center():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
-    field  = ["id","username","name_cn","mobile","email","role"]
+    field  = ["id","username","name_cn","password","mobile","email","role","status"]
     data={'username':session['username']}
-    result  = _center('user',data,field)
+    result  = getone('user',data,field)
     print result
     return render_template('center.html',msg=result['msg'])
 
 # 修改个人密码
 @app.route('/user/chpwdoneself',methods=['GET', 'POST'])
 def chpwdoneself():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     chpwd = {k:v[0] for k,v in dict(request.form).items()}
     where = {'id':chpwd['id'],'password':chpwd['oldpasswd']}
@@ -36,6 +40,8 @@ def chpwdoneself():
 # 修改个人资料
 @app.route('/user/chmessageoneself',methods=['GET', 'POST'])
 def chmessageoneself():
+    if 'username' not in  session:
+        return redirect('/login/')
     msg = sessionmsg()
     if request.method=='POST':
         field  = ["username","name_cn","mobile","email"]
