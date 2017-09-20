@@ -158,7 +158,7 @@
 
 <center>5.目录结构</center > 
 
-![image](https://github.com/1032231418/python/blob/master/day9/jiegou.PNG)
+![image](https://github.com/1032231418/python/blob/master/day9/jiegou.png)
 
 
 
