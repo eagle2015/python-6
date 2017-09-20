@@ -143,6 +143,10 @@
 
 ![image](https://github.com/1032231418/python/blob/master/day9/adduser.png)
 
+用户详情
+
+![image](https://github.com/1032231418/python/blob/master/day9/userxq.png)
+
 
 修改用户信息
 
