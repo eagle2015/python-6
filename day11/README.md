@@ -189,9 +189,6 @@
 
 ![image](https://github.com/1032231418/python/blob/master/day9/changeserver.png)
 
-<center>5.目录结构</center > 
-
-![image](https://github.com/1032231418/python/blob/master/day9/jiegou.png)
 
 
 域名管理
@@ -218,3 +215,9 @@ ansible 远程执行命令
 查看命令历史
 
 ![image](https://github.com/1032231418/python/blob/master/day11/cmd2.png)
+
+
+<center>5.目录结构</center > 
+
+![image](https://github.com/1032231418/python/blob/master/day11/jiegou.png)
+
