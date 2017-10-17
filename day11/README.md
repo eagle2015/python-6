@@ -2,9 +2,9 @@
 
 作业：
 
-       功能优化:
-	               新增功能: ansible第三方接口
-	               新增功能: Bind-DLZ DNS 管理
+       新增功能:
+	               * ansible第三方接口
+	               * Bind-DLZ DNS 管理
 				   
 				   
 
