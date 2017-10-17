@@ -4,7 +4,7 @@
 
        功能优化:
 	               新增功能: ansible第三方接口
-				   新增功能: Bind-DLZ DNS 管理
+	               新增功能: Bind-DLZ DNS 管理
 				   
 				   
 
@@ -196,15 +196,25 @@
 
 域名管理
 
+添加域名解析
+
 ![image](https://github.com/1032231418/python/blob/master/day11/zoneadd.png)
 
+修改域名解析
+
 ![image](https://github.com/1032231418/python/blob/master/day11/zoneupdate.png)
+
+测试解析记录
 
 ![image](https://github.com/1032231418/python/blob/master/day11/zonejx.png)
 
 
 ansible 远程执行命令
 
+远程执行命令
+
 ![image](https://github.com/1032231418/python/blob/master/day11/cmd1.png)
+
+查看命令历史
 
 ![image](https://github.com/1032231418/python/blob/master/day11/cmd2.png)
