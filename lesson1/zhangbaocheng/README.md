@@ -36,7 +36,10 @@
 		   
 	           函数：index_views       #dashboard	 
 
-<center>3.流程图</center > 
+3.流程图
 
 ![image](https://github.com/1032231418/python/blob/master/lesson1/zhangbaocheng/naotu.png)			   
 		   
+4.演示
+
+![image](https://github.com/1032231418/python/blob/master/lesson1/zhangbaocheng/yanshi.gif)			   
